@@ -94,14 +94,12 @@ export class AppComponent implements OnInit {
 
     for (let i = 0; i < this.board.length; i++) {
       // bucle que recorre las filas
-      for (
-        let j = 0;
-        j < this.board[i].length;
-        j++ //bucle que recorre las columnas
-      )
+      for (let j = 0; j < this.board[i].length; j++) {
+        //bucle que recorre las columnas
         if (this.board[i][j] === '') {
           isFull = false;
         }
+      }
     }
 
     if (hasWon === false && isFull === true) {

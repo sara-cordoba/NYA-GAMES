@@ -1,98 +1,171 @@
-.general{
+.general {
     width: 80%;
-    height: 1030px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: auto;
+    top: 70px;
     position: relative;
-    left: 10%;
-    top: 35px;
     background-color: rgb(133 132 132 / 96%);
     border-radius: 10px;
-
-    .crossed-out{
-        text-decoration-line: line-through;
-        font-size: 18px;
+  }
+  
+  .crossed-out {
+    text-decoration-line: line-through;
+    font-size: 18px;
+  }
+  
+  .header-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+  
+    h1 {
+      text-transform: uppercase;
+      margin-bottom: 2px;
     }
-    
-    .header-area{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        font-size: 30px;
-
-        h1{
-            text-transform: uppercase;
-            margin-bottom: 2px;
-        }
-
-        h3{
-            margin-top: 2px;
-        }
+  
+    h3 {
+      margin-top: 2px;
     }
-    .nav-home{
-        cursor: pointer;
+  }
+  
+  .title-game {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    margin: 20px;
+    font-size: 30px;
+  
+    img {
+      margin-left: 20px;
     }
-
-    .title-game{
-        display: flex;
-        align-items: center;
-        margin: 50px;
-        font-size: 30px;
-
-        img{
-            margin-left: 20px;
-        }
-
-        .devil-cat{
-            border: 3px solid #8f2424;
-            border-radius: 10px;
-            padding: 5px;
-        }
-        .god-cat{
-            border: 3px solid #fff6d0;
-            border-radius: 10px;
-            padding: 5px;
-        }
+  
+    .devil-cat {
+      border: 3px solid #8f2424;
+      border-radius: 10px;
+      padding: 5px;
     }
-    
-
-    .cell{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 40px;
-        width: 130px;
-        height: 130px;
-       box-shadow: inset 0 0 2px 1px black;
+  
+    .god-cat {
+      border: 3px solid #fff6d0;
+      border-radius: 10px;
+      padding: 5px;
     }
-
-    .container-board{
-        width: 390px;
-        height: 390px;
-        display: flex;
-        margin: 0 auto;
-        border: 1px solid black;
+  }
+  
+  .cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    width: 130px;
+    height: 130px;
+    box-shadow: inset 0 0 2px 1px black;
+  }
+  
+  .container-board {
+    width: 390px;
+    height: 390px;
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 0 auto;
+    border: 1px solid black;
+  }
+  
+  .winner {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin: 20px;
+    font-size: 20px;
+  }
+  
+  .btn-reset {
+    width: 100%;
+    max-width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border-bottom-style: none;
+    background: darkseagreen;
+    cursor: pointer;
+  }
+  
+  .btn-reset:hover {
+    background: rgb(95, 126, 95);
+    border-style: none;
+  }
+  
+  /* MQ para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .general {
+      width: 95%;
+      padding: 10px;
     }
-
-    .winner{
-        display: flex;
-        flex-direction: column;
-        margin: 50px;
-        font-size: 20px;
+  
+    .title-game {
+      font-size: 24px;
+      margin: 10px;
+      img {
+        width: 50px;
+        height: 50px;
+        margin-left: 10px;
+      }
     }
-
-    .btn-reset{
-        width: 12%;
+  
+    .cell {
+      width: 100px;
+      height: 100px;
+      font-size: 30px;
+    }
+  
+    .container-board {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .btn-reset {
+      width: 100%;
+      height: 40px;
+    }
+  }
+  
+  /* MQ pantallas muy pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .title-game {
+      font-size: 18px;
+      img {
+        width: 40px;
         height: 40px;
-        border-radius: 10px;
-        border-bottom-style: none;
-        background: darkseagreen;
-        position: relative;
-        right: 5px;
-        cursor: pointer;
+        margin-left: 5px;
+      }
     }
-
-    .btn-reset:hover{
-        background: rgb(95, 126, 95); 
-        border-style: none;
+  
+    .cell {
+      width: 80px;
+      height: 80px;
+      font-size: 24px;
     }
-
-}
+  
+    .container-board {
+      width: 240px;
+      height: 240px;
+    }
+  
+    .btn-reset {
+      width: 100%;
+      height: 35px;
+    }
+  
+    .header-area h1 {
+      font-size: 24px;
+    }
+  
+    .header-area h3 {
+      font-size: 16px;
+    }
+  }
+  

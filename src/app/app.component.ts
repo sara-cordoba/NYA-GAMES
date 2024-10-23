@@ -1,10 +1,10 @@
-import { NgClass, NgFor } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgFor, NgClass],
+  imports: [RouterOutlet, NgFor, NgClass, NgIf],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

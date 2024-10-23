@@ -2,17 +2,18 @@
     width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 5px;
     height: auto;
-    top: 70px;
+    top: 25px;
     position: relative;
-    background-color: rgb(133 132 132 / 96%);
+    background-color: rgb(255 240 211 / 96%);
     border-radius: 10px;
   }
   
   .crossed-out {
     text-decoration-line: line-through;
     font-size: 18px;
+    padding-right: 5px;
   }
   
   .header-area {
@@ -25,10 +26,14 @@
     h1 {
       text-transform: uppercase;
       margin-bottom: 2px;
+      color: #FD8D90;
+      text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
     }
   
     h3 {
       margin-top: 2px;
+      color: #FD8D90;
+      font-weight: 100;
     }
   }
   
@@ -39,19 +44,20 @@
     flex-wrap: wrap; 
     margin: 20px;
     font-size: 30px;
+    color: #FD8D90;
   
     img {
       margin-left: 20px;
     }
   
     .devil-cat {
-      border: 3px solid #8f2424;
+      border: 3px solid #8ECAC8;
       border-radius: 10px;
       padding: 5px;
     }
   
     .god-cat {
-      border: 3px solid #fff6d0;
+      border: 3px solid #FD8D90;
       border-radius: 10px;
       padding: 5px;
     }
@@ -82,6 +88,11 @@
     align-items: center; 
     margin: 20px;
     font-size: 20px;
+
+    h2{
+      color: #FD8D90;
+      font-weight: 100;
+    }
   }
   
   .btn-reset {
@@ -90,12 +101,13 @@
     height: 40px;
     border-radius: 10px;
     border-bottom-style: none;
-    background: darkseagreen;
+    background: #8ECAC8;
+    border-style: none;
     cursor: pointer;
   }
   
   .btn-reset:hover {
-    background: rgb(95, 126, 95);
+    background: #5AA19E;
     border-style: none;
   }
   
@@ -167,5 +179,31 @@
     .header-area h3 {
       font-size: 16px;
     }
+  }
+
+  // Cats icons
+
+  #devil-cat,
+  #god-cat{
+    width: 3%;
+  }
+
+  .cat-img{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+  }
+
+  .cat-img-winner{
+    width: 10%;
+
+  }
+
+  .god-cat-winner {
+    color: #81695b; 
+  }
+  
+  .devil-cat-winner {
+    color: black; 
   }
   

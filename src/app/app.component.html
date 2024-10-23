@@ -7,8 +7,8 @@
 
   <div class="title-game">
     <h2>Three in a Row</h2>
-    <img id="devil-cat" [ngClass]="{'devil-cat': currentPlayer === 'X'}" src="assets/game/devil-cat-30.png">
-    <img id="god-cat" [ngClass]="{'god-cat': currentPlayer === '0'}" src="assets/game/god-cat-30.png">
+    <img id="devil-cat" [ngClass]="{'devil-cat': currentPlayer === 'X'}" src="assets/game/cat-solid-black.svg">
+    <img id="god-cat" [ngClass]="{'god-cat': currentPlayer === '0'}" src="assets/game/cat-solid-god.svg">
   </div>
 
   <section>
@@ -17,7 +17,19 @@
       <div class="row" *ngFor="let row of board; let rowIndex = index">
         <!-- Itera sobre cada celda dentro de la fila y llama a makeMove() al hacer clic en la celda -->
         <div (click)="makeMove(rowIndex, colIndex)" class="cell" *ngFor="let cell of row; let colIndex = index">
-        {{board[rowIndex][colIndex]}}  <!-- Muestra el valor de la celda ('X', 'O' o vacío) -->
+        <!-- Condicional para mostrar imágenes de los gatos según el valor de la celda ('X' o 'O') -->
+        <ng-container *ngIf="board[rowIndex][colIndex] === 'X'">
+          <img src="assets/game/cat-solid-black.svg" alt="Devil Cat" class="cat-img">
+        </ng-container>
+
+        <ng-container *ngIf="board[rowIndex][colIndex] === '0'">
+          <img src="assets/game/cat-solid-god.svg" alt="God Cat" class="cat-img">
+        </ng-container>
+
+        <ng-container *ngIf="!board[rowIndex][colIndex]">
+          <!-- Si no hay 'X' ni 'O', la celda queda vacía -->
+        </ng-container>
+
         </div> 
         
        
@@ -26,9 +38,29 @@
     </div>
 
     <div class="winner">
-      <h2>Winner: {{winner}}  {{draw}}</h2>
+      <h2>
+        Winner: 
+        <!-- Si el ganador es 'X' (Devil Cat), mostramos la imagen y el texto en negro -->
+        <ng-container *ngIf="winner === 'X'">
+          <img src="assets/game/cat-solid-black.svg" alt="Devil Cat" class="cat-img-winner"> 
+          <span class="devil-cat-winner">Devil Cat!</span>
+        </ng-container>
+    
+        <!-- Si el ganador es 'O' (God Cat), mostramos la imagen y el texto en el color #81695b -->
+        <ng-container *ngIf="winner === '0'">
+          <img src="assets/game/cat-solid-god.svg" alt="God Cat" class="cat-img-winner"> 
+          <span class="god-cat-winner">God Cat!</span>
+        </ng-container>
+    
+        <!-- Si hay un empate -->
+        <ng-container *ngIf="draw">
+          It's a Draw!
+        </ng-container>
+      </h2>
       <button class="btn-reset" (click)="resetGame()">Reset</button>
     </div>
+    
+    
 
   </section>
 
